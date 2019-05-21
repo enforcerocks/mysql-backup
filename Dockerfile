@@ -7,6 +7,7 @@ RUN apk add --update mysql-client mariadb-connector-c bash python3 samba-client 
     rm -rf /var/cache/apk/* && \
     touch /etc/samba/smb.conf && \
     pip3 install awscli
+RUN apk add --update rsync openssh
 
 # set us up to run as non-root user
 RUN groupadd -g 1005 appuser && \
